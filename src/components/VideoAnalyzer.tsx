@@ -4,12 +4,12 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 import { AnalysisResult } from '@/lib/ai-analysis';
-// import { VideoInfo, extractVideoId } from '@/lib/youtube';
+import { VideoInfo } from '@/lib/youtube';
 import { isValidYouTubeUrl, getValidationMessage } from '@/lib/youtube-validator';
 // import { VideoPreview } from './VideoPreview';
 
 interface VideoAnalyzerProps {
-  onAnalyze: (results: { analysis: AnalysisResult }) => void;
+  onAnalyze: (results: { videoInfo: VideoInfo; analysis: AnalysisResult }) => void;
   loading: boolean;
   setLoading: (loading: boolean) => void;
 }
